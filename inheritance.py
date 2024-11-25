@@ -15,3 +15,5 @@ class Fish(Animal):
 
 horse = Mammal()
 horse.eat()
+print(issubclass(Mammal, Animal))
+print(issubclass(Mammal, object))
