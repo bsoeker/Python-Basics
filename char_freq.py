@@ -32,6 +32,3 @@ for key, value in char_occurrence.items():
         winners[key] = value
 
 pprint(winners)
-
-
-pprint(char_occurrence.items())
