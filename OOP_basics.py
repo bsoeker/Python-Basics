@@ -34,21 +34,28 @@ print(point == 1)
 print(point + point2)
 
 
+# User defined container
 class TagCloud:
     def __init__(self):
-        self.tags = {}
+        self.__tags = {}
 
     def add(self, tag: str):
-        self.tags[tag.lower()] = self.tags.get(tag.lower(), 0) + 1
+        self.__tags[tag.lower()] = self.__tags.get(tag.lower(), 0) + 1
 
     def __getitem__(self, tag: str):
-        return self.tags.get(tag.lower(), 0)
+        return self.__tags.get(tag.lower(), 0)
 
     def __setitem__(self, tag, value):
-        self.tags[tag] = value
+        self.__tags[tag] = value
 
     def __len__(self):
-        return len(self.tags)
+        return len(self.__tags)
 
     def __iter__(self):
-        return iter(self.tags)
+        return iter(self.__tags)
+
+
+cloud = TagCloud()
+cloud.add("python")
+print(cloud["pythonsdf"])
+print(cloud.__dict__)
