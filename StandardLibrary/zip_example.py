@@ -10,3 +10,5 @@ from pathlib import Path
 
 with ZipFile("./files.zip") as zip_file:
     print(zip_file.namelist())
+    print(zip_file.getinfo("data.csv").__sizeof__())
+    print(zip_file.getinfo("data.csv").compress_size)
