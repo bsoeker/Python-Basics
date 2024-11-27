@@ -1,1 +1,2 @@
 StandardLibrary/*.env
+__pycache__/
